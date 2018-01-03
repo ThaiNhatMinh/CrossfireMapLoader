@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapLoader", "MapLoader.vcxproj", "{5FFCC589-515C-4266-B745-E495F7C58AB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Debug|x64.ActiveCfg = Debug|x64
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Debug|x64.Build.0 = Debug|x64
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Debug|x86.ActiveCfg = Debug|Win32
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Debug|x86.Build.0 = Debug|Win32
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Release|x64.ActiveCfg = Release|x64
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Release|x64.Build.0 = Release|x64
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Release|x86.ActiveCfg = Release|Win32
+		{5FFCC589-515C-4266-B745-E495F7C58AB5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84853860-01E9-49D9-B1CE-1987544A6163}
+	EndGlobalSection
+EndGlobal
