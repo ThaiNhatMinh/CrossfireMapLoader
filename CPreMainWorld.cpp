@@ -10,6 +10,31 @@ CMainWorld::CMainWorld()
 CMainWorld::~CMainWorld()
 {
 }
+ELoadWorldStatus g_iWorldBlockerData(FILE* pFile)
+{
+	uint32 nNumPolys;
+	STREAM_READ(nNumPolys);
+
+	for (size_t i = 0; i<nNumPolys; i++)
+	{
+		float dump[4];
+		fread(dump, sizeof(float)*4, 1, pFile);
+		uint32 nVertCount = 0;
+		STREAM_READ(nVertCount);
+		for (size_t j = 0; j < nVertCount; j++)
+		{
+			glm::vec3 v;
+			fread(&v, sizeof(float) * 3, 1, pFile);
+			printf(" ");
+		}
+	}
+
+	// Dummy field for future expansion
+	uint32 nDummy;
+	STREAM_READ(nDummy);
+	assert(nDummy == 0);
+	return LoadWorld_Ok;
+};
 
 bool CMainWorld::Load(FILE * pFile)
 {
@@ -144,36 +169,16 @@ bool CMainWorld::Load(FILE * pFile)
 	InsertStaticLights(m_WorldTree);
 
 	// Read in the lightgrid...
-	fseek(pFile, lightGridMarker,SEEK_CUR);
+	fseek(pFile, lightGridMarker,SEEK_SET);
 	LoadLightGrid(pFile);
 
 	// Read the blocker data
-	fseek(pFile, physicsDataMarker, SEEK_CUR);
+	fseek(pFile, physicsDataMarker, SEEK_SET);
 	//assert();
-	auto g_iWorldBlockerData = [](FILE* pFile)
-	{
-		uint32 nNumPolys;
-		STREAM_READ(nNumPolys);
 
-		for (size_t i=0; i<nNumPolys; i++)
-		{
-			float dump;
-			fread(&dump, sizeof(float), 4, pFile);
-			uint32 nVertCount = 0;
-			STREAM_READ(nVertCount);
-			for (size_t j = 0; j < nVertCount; j++)
-			{
-				glm::vec3 v;
-				fread(&v, sizeof(glm::vec3), 1, pFile);
-			}
-		}
 
-		// Dummy field for future expansion
-		uint32 nDummy;
-		STREAM_READ(nDummy);
-		assert(nDummy == 0);
-		return LoadWorld_Ok;
-	};
+
+	
 
 	ELoadWorldStatus eResult = g_iWorldBlockerData(pFile);
 
@@ -184,7 +189,7 @@ bool CMainWorld::Load(FILE * pFile)
 	}
 
 	// Read the particle blocker data
-	fseek(pFile, particleDataMarker, SEEK_CUR);
+	fseek(pFile, particleDataMarker, SEEK_SET);
 	auto g_iWorldParticleBlockerData = [](FILE* pFile)
 	{
 		// read in the number of blocker polys
@@ -241,7 +246,7 @@ bool CMainWorld::Load(FILE * pFile)
 
 	//////////////////////////////////////////////////////////
 	//read in the rendering data
-	fseek(pFile, renderDataMarker, SEEK_CUR);
+	fseek(pFile, renderDataMarker, SEEK_SET);
 	if (!LoadRenderData(pFile))
 	{
 		Term();
@@ -268,6 +273,7 @@ void CMainWorld::CalcBoundingSpheres() {
 		}
 	}
 }
+
 
 // Creates the light table for a WorldBsp.
 void CMainWorld::LoadLightGrid(FILE* pFile)
@@ -304,14 +310,14 @@ void CMainWorld::AddStaticLights(FILE *pFile) {
 		object_data_start_pos = ftell(pFile);
 
 		//read the object type string.
-		char object_type[256]; uint32 len;
+		char object_type[256]; uint16 len;
 		STREAM_READ(len);
 		fread(object_type, len, 1, pFile);
-		
+
+		object_type[len] = 0;
 
 		//check if this object is a light object.
-		if (strcmp(object_type, "Light") == 0 || strcmp(object_type, "DirLight") == 0 ||
-			strcmp(object_type, "ObjectLight") == 0)
+		if (strcmp(object_type, "Light") == 0 || strcmp(object_type, "DirLight") == 0 ||strcmp(object_type, "ObjectLight") == 0)
 		{
 			//
 			//This is a light object.
@@ -360,10 +366,11 @@ void CMainWorld::AddStaticLights(FILE *pFile) {
 			for (uint32 prop_index = 0; prop_index < num_properties; prop_index++)
 			{
 				//read the property name.
-				char property_name[256]; uint32 len;
+				char property_name[256]; uint16 len;
 				STREAM_READ(len);
 				fread(property_name, len, 1, pFile);
-
+				property_name[len] = 0;
+				printf("Name: %s\n", property_name);
 				//read property code (type)
 				uint8 prop_code;
 				STREAM_READ(prop_code);
@@ -465,8 +472,8 @@ void CMainWorld::AddStaticLights(FILE *pFile) {
 					//ok, now figure out the ID of the light group, this is ugly, but there is
 					//no access to the client or server here, so we need to just do the same that
 					//the other ID stuff is generating
-					//nLightGroupID = st_GetHashCode(pszData);
-					system("pause");
+					nLightGroupID = st_GetHashCode(pszData);
+					//system("pause");
 				}
 				else if (prop_code == PT_STRING && _stricmp(property_name, "Attenuation") == 0)
 				{
@@ -523,6 +530,7 @@ void CMainWorld::AddStaticLights(FILE *pFile) {
 						//update the bounding box
 						light.UpdateBBox(light.m_Pos, glm::vec3(light.m_Radius, light.m_Radius, light.m_Radius));
 
+						
 						//insert the light into our list.
 						static_light_list.push_back(element);
 					}
@@ -531,7 +539,7 @@ void CMainWorld::AddStaticLights(FILE *pFile) {
 		}
 		else
 		{
-			fseek(pFile,object_data_start_pos + object_data_len,SEEK_CUR);
+			fseek(pFile,object_data_start_pos + object_data_len,SEEK_SET);
 		}
 	}
 }
@@ -542,7 +550,7 @@ void CMainWorld::Term()
 
 bool CMainWorld::LoadRenderData(FILE * pFile)
 {
-	return false;
+	return m_WorldRenderer.Load(pFile);
 }
 
 void CMainWorld::InsertStaticLights(WorldTree &world_tree) {

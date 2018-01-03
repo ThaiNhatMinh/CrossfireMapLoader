@@ -88,8 +88,7 @@ public:
 class WorldTreeNode
 {
 private:
-	std::vector<std::vector<std::unique_ptr<WorldTreeNode>>> m_Children;
-	std::vector<std::unique_ptr<WorldTreeNode>> m_ChildrenA;
+	std::vector<std::unique_ptr<WorldTreeNode>> m_Children;
 	glm::vec3 m_BBoxMax;
 	glm::vec3 m_BBoxMin;
 	// Centerpoint of the bounding box in the X and Z dimensions
@@ -124,11 +123,11 @@ public:
 
 
 	//accesses the specified world node
-	WorldTreeNode*			GetChild(uint32 nX, uint32 nZ) { return m_Children[nX][nZ].get(); }
-	const WorldTreeNode*	GetChild(uint32 nX, uint32 nZ) const { return m_Children[nX][nZ].get(); }
+	WorldTreeNode*			GetChild(uint32 nX, uint32 nZ) { return m_Children[nX * 2 + nZ].get(); }
+	const WorldTreeNode*	GetChild(uint32 nX, uint32 nZ) const { return m_Children[nX * 2 + nZ].get(); }
 
-	WorldTreeNode*			GetChild(uint32 nNode) { return m_Children[nNode/2][nNode%2].get(); }
-	const WorldTreeNode*	GetChild(uint32 nNode) const { return m_Children[nNode / 2][nNode % 2].get(); }
+	WorldTreeNode*			GetChild(uint32 nNode) { return m_Children[nNode].get(); }
+	const WorldTreeNode*	GetChild(uint32 nNode) const { return m_Children[nNode].get(); }
 
 	//accessors for bounding box information
 	const glm::vec3&			GetBBoxMin() const { return m_BBoxMin; }

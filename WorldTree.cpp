@@ -28,15 +28,16 @@ bool WorldTree::Load(FILE * pFile)
 	glm::vec3 m_BBoxMax;
 	glm::vec3 m_BBoxMin;
 	uint32 nTotalNodes;
-	uint8 curByte, curBit;
+
 
 	fread(&m_BBoxMin, sizeof(float) * 3, 1, pFile);
 	fread(&m_BBoxMax, sizeof(float) * 3, 1, pFile);
 	fread(&nTotalNodes, sizeof(uint32), 1, pFile);
 	fread(&m_TerrainDepth, sizeof(uint32), 1, pFile);
 
-	curByte = 0;
-	curBit = 8;
+	uint8 curByte = 0;
+	uint8 curBit = 8;
+	uint32 nCurrOffset = 0;
 
 	m_RootNode.SetBBox(m_BBoxMin, m_BBoxMax);
 	return m_RootNode.Load(pFile, curByte, curBit);

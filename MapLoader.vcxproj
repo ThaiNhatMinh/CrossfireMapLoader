@@ -145,12 +145,17 @@
   <ItemGroup>
     <ClInclude Include="CLightTable.h" />
     <ClInclude Include="CPreMainWorld.h" />
+    <ClInclude Include="CRBSection.h" />
+    <ClInclude Include="de_sprite.h" />
     <ClInclude Include="DE_World.h" />
     <ClInclude Include="lt.h" />
     <ClInclude Include="ltlink.h" />
     <ClInclude Include="LTPlane.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="RenderBlock.h" />
+    <ClInclude Include="RenderWorld.h" />
     <ClInclude Include="SPolyVertex.h" />
+    <ClInclude Include="SpriteControl.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="targetver.h" />
@@ -164,10 +169,14 @@
   <ItemGroup>
     <ClCompile Include="CLightTable.cpp" />
     <ClCompile Include="CPreMainWorld.cpp" />
+    <ClCompile Include="CRBSection.cpp" />
+    <ClCompile Include="DE_World.cpp" />
     <ClCompile Include="ltlink.cpp" />
     <ClCompile Include="LTPlane.cpp" />
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="RenderBlock.cpp" />
+    <ClCompile Include="RenderWorld.cpp" />
     <ClCompile Include="SPolyVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

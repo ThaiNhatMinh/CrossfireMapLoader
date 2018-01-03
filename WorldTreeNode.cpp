@@ -4,6 +4,7 @@
 
 WorldTreeNode::WorldTreeNode()
 {
+	
 }
 
 
@@ -32,20 +33,17 @@ bool WorldTreeNode::Load(FILE * pFile, uint8 & curByte, uint8 & curBit)
 		fread(&curByte,sizeof(curByte),1,pFile);
 		curBit = 0;
 	}
+
 	bSubdivide = !!(curByte & (1 << curBit));
 	++curBit;
+
 	if (bSubdivide)
 	{
-		if (!Subdivide())
-			return LTFALSE;
+		Subdivide();
 
 		for (i = 0; i < MAX_WTNODE_CHILDREN; i++)
 		{
-			if (!m_ChildrenA[i]->Load(pFile, curByte, curBit))
-			{
-				TermChildren();
-				return LTFALSE;
-			}
+			m_Children[i]->Load(pFile, curByte, curBit);
 		}
 	}
 
@@ -56,43 +54,34 @@ bool WorldTreeNode::Subdivide()
 {
 	uint32 i;
 	glm::vec3 vSubSize, vSubMin, vSubMax;
-
+	m_Children.resize(MAX_WTNODE_CHILDREN);
 
 	// Allocate..
 	for (i = 0; i < MAX_WTNODE_CHILDREN; i++)
 	{
-		m_ChildrenA[i] = std::make_unique<WorldTreeNode>();
-		if (!m_ChildrenA[i])
-		{
-			Term();
-			return LTFALSE;
-		}
-
-		m_ChildrenA[i]->m_pParent = this;
+		m_Children[i] = std::make_unique<WorldTreeNode>();
+		m_Children[i]->m_pParent = this;
 	}
 
-	vSubSize = (m_BBoxMax - m_BBoxMin) * 0.5f;
-	/*
 	// -x -z
-	m_Children[0][0]->SetBBox(
-		LTVector(m_vCenter.x - vSubSize.x, m_BBoxMin.y, m_vCenter.z - vSubSize.z),
-		LTVector(m_vCenter.x, m_BBoxMax.y, m_vCenter.z));
+	GetChild(0, 0)->SetBBox(
+		glm::vec3(GetBBoxMin().x, GetBBoxMin().y, GetBBoxMin().z),
+		glm::vec3(GetCenterX(), GetBBoxMax().y, GetCenterZ()));
 
 	// -x +z
-	m_Children[0][1]->SetBBox(
-		LTVector(m_vCenter.x - vSubSize.x, m_BBoxMin.y, m_vCenter.z),
-		LTVector(m_vCenter.x, m_BBoxMax.y, m_vCenter.z + vSubSize.z));
+	GetChild(0, 1)->SetBBox(
+		glm::vec3(GetBBoxMin().x, GetBBoxMin().y, GetCenterZ()),
+		glm::vec3(GetCenterX(), GetBBoxMax().y, GetBBoxMax().z));
 
 	// +x -z
-	m_Children[1][0]->SetBBox(
-		LTVector(m_vCenter.x, m_BBoxMin.y, m_vCenter.z - vSubSize.z),
-		LTVector(m_vCenter.x + vSubSize.x, m_BBoxMax.y, m_vCenter.z));
+	GetChild(1, 0)->SetBBox(
+		glm::vec3(GetCenterX(), GetBBoxMin().y, GetBBoxMin().z),
+		glm::vec3(GetBBoxMax().x, GetBBoxMax().y, GetCenterZ()));
 
 	// +x +z
-	m_Children[1][1]->SetBBox(
-		LTVector(m_vCenter.x, m_BBoxMin.y, m_vCenter.z),
-		LTVector(m_vCenter.x + vSubSize.x, m_BBoxMax.y, m_vCenter.z + vSubSize.z));
-		*/
+	GetChild(1, 1)->SetBBox(
+		glm::vec3(GetCenterX(), GetBBoxMin().y, GetCenterZ()),
+		glm::vec3(GetBBoxMax().x, GetBBoxMax().y, GetBBoxMax().z));
 	return LTTRUE;
 }
 
@@ -102,9 +91,9 @@ void WorldTreeNode::TermChildren()
 
 	for (i = 0; i < MAX_WTNODE_CHILDREN; i++)
 	{
-		if (m_ChildrenA[i])
+		if (m_Children[i])
 		{
-			delete m_ChildrenA[i].release();
+			delete m_Children[i].release();
 		}
 	}
 

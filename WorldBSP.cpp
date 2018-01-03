@@ -147,22 +147,24 @@ ELoadWorldStatus WorldBSP::Load(FILE * pFile, bool bUsePlaneTypes)
 	STREAM_READ(nNamesLen);
 	STREAM_READ(nTextures);
 
-	curPos = 0;
+	
 	for (i = 0; i < nTextures; i++)
 	{
 		//m_TextureNames[i] = &m_TextureNameData[curPos];
-		std::string name;
+		curPos = 0;
+		char filename[256];
 		for (;;)
 		{
 			char c;
 			STREAM_READ(c);
-			name.append(&c);
+			filename[curPos] = c;
+			curPos++;
 			if (c == 0)
 			{
-				m_TextureNames.push_back(name);
+				m_TextureNames.push_back(filename);
+				break;
 			}
-			curPos++;
-			
+		
 		}
 	}
 

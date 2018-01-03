@@ -61,8 +61,40 @@
 #define SURF_NOTASTEP           (1<<22)     // Don't try to step up onto this polygon
 #define SURF_MIRROR				(1<<23)		// This surface is a mirror
 
-// Forward declaration of the file identifier class
-struct FileIdentifier;
+#define PT_STRING         0
+#define PT_VECTOR         1
+#define PT_COLOR          2
+#define PT_REAL           3
+#define PT_FLAGS          4
+#define PT_BOOL           5
+#define PT_LONGINT        6 
+#define PT_ROTATION       7
+#define NUM_PROPERTYTYPES 8
+
+#define MAX_OBJ_NODE_LINKS		5
+#define OBJ_NODE_LINK_ALWAYSVIS 4
+#define MAX_WTNODE_CHILDREN		4
+#define FRAMECODE_NOTINTREE		0xFFFFFFFF
+
+enum WTObjType
+{
+	WTObj_DObject = 0,    // Bounding box object (DObject).
+	WTObj_Light         // Light for accurate model lighting.
+} ;
+
+enum EAABBCorner {
+	eAABB_NearTopLeft = 0,
+	eAABB_NearTopRight = 1,
+	eAABB_NearBottomLeft = 2,
+	eAABB_NearBottomRight = 3,
+	eAABB_FarTopLeft = 4,
+	eAABB_FarTopRight = 5,
+	eAABB_FarBottomLeft = 6,
+	eAABB_FarBottomRight = 7,
+	eAABB_None = 8,
+};
+
+
 
 // Different types of textures determined from their command string
 enum ESharedTexType
@@ -219,25 +251,4 @@ enum
 
 };
 
-
-#define PT_STRING         0
-#define PT_VECTOR         1
-#define PT_COLOR          2
-#define PT_REAL           3
-#define PT_FLAGS          4
-#define PT_BOOL           5
-#define PT_LONGINT        6 
-#define PT_ROTATION       7
-#define NUM_PROPERTYTYPES 8
-
-#define MAX_OBJ_NODE_LINKS		5
-#define OBJ_NODE_LINK_ALWAYSVIS 4
-#define MAX_WTNODE_CHILDREN		4
-#define FRAMECODE_NOTINTREE		0xFFFFFFFF
-
-typedef enum
-{
-	WTObj_DObject = 0,    // Bounding box object (DObject).
-	WTObj_Light         // Light for accurate model lighting.
-} WTObjType;
-
+uint32 st_GetHashCode(const char *pString);

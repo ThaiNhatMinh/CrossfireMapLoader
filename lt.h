@@ -30,6 +30,7 @@ typedef unsigned __int64    uint64;
 
 #define LTFALSE		0
 #define LTTRUE		1
+#define MAX_PATH          260
 
 template<class T, class TB>
 __inline T LTMIN(T a, TB b) { return ((a < (T)b) ? a : (T)b); }
@@ -52,4 +53,33 @@ __inline T LTMAX(T a, TB b) { return ((a >(T)b) ? a : (T)b); }
 #define STREAM_READ(_x_) fread(&(_x_),sizeof(_x_),1,pFile);
 
 #define MATH_PI             3.141592653589793f
+
+
+
+
+/*!
+Base type values (enumeration emulation).
+LTBOOL.
+*/
+#define LTFALSE		0
+#define LTTRUE		1
+
+
+enum
+{
+
+	/*!
+	No problem.
+	*/
+	LT_OK = 0,
+
+	/*!
+	Problem.
+	*/
+	LT_ERROR = 1,
+};
+
+#define LTNULL nullptr
+
+#define E_DEBUG printf("%d %s \n", __LINE__,__FUNCSIG__);
 #endif

@@ -20,6 +20,8 @@ public:
 	CLightTable light_table;
 	//list of our StaticLight objects.
 	std::vector<StaticLight> static_light_list;
+
+	RenderWorld m_WorldRenderer;
 	CMainWorld();
 	~CMainWorld();
 
