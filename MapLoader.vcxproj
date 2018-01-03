@@ -143,17 +143,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CLightTable.h" />
+    <ClInclude Include="CPreMainWorld.h" />
+    <ClInclude Include="DE_World.h" />
+    <ClInclude Include="lt.h" />
+    <ClInclude Include="ltlink.h" />
+    <ClInclude Include="LTPlane.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="SPolyVertex.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Surface.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="WorldBSP.h" />
+    <ClInclude Include="WorldData.h" />
+    <ClInclude Include="WorldPoly.h" />
+    <ClInclude Include="WorldTree.h" />
+    <ClInclude Include="WorldTreeNode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLightTable.cpp" />
+    <ClCompile Include="CPreMainWorld.cpp" />
+    <ClCompile Include="ltlink.cpp" />
+    <ClCompile Include="LTPlane.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="SPolyVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Surface.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="WorldBSP.cpp" />
+    <ClCompile Include="WorldData.cpp" />
+    <ClCompile Include="WorldPoly.cpp" />
+    <ClCompile Include="WorldTree.cpp" />
+    <ClCompile Include="WorldTreeNode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
