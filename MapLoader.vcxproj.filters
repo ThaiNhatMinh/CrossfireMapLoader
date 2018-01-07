@@ -5,140 +5,292 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{84b06e8f-b72a-44e8-aa03-aef862fe42f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGUi">
+      <UniqueIdentifier>{cdeaf052-4acd-4672-ba3d-606a439e17e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="lt.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\CLightTable.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="WorldTreeNode.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\CPreMainWorld.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="WorldTree.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\CRBSection.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="CPreMainWorld.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\de_sprite.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="WorldBSP.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\DE_World.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\lt.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="LTPlane.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\ltlink.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="Surface.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\LTPlane.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\Node.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="SPolyVertex.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\RenderBlock.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="WorldPoly.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\RenderWorld.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="DE_World.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\SPolyVertex.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="WorldData.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\SpriteControl.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="CLightTable.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\Surface.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="ltlink.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\Vertex.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="RenderWorld.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\WorldBSP.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="RenderBlock.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\WorldData.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="CRBSection.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\WorldPoly.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="de_sprite.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\WorldTree.h">
+      <Filter>World</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteControl.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="World\WorldTreeNode.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Application.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Camera.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Context.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\DebugShader.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\DirectInput.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Frustum.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Mesh.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\OpenGLRenderer.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\ResourceLoader.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Shader.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\SystemUI.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Texture.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Timer.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Windows.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\interface.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\ModelCache.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imconfig.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui_internal.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\stb_rect_pack.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\stb_textedit.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\stb_truetype.h">
+      <Filter>ImGUi</Filter>
+    </ClInclude>
+    <ClInclude Include="App\MapMesh.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Log.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\MapShader.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\ImGuiShader.h">
+      <Filter>App</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MapLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WorldTreeNode.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WorldTree.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\CLightTable.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="CPreMainWorld.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\CPreMainWorld.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="WorldBSP.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\CRBSection.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="Vertex.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\DE_World.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="LTPlane.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\ltlink.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="Surface.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\LTPlane.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\Node.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="SPolyVertex.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\RenderBlock.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="WorldPoly.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\RenderWorld.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="WorldData.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\SPolyVertex.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="CLightTable.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\Surface.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="ltlink.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\Vertex.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="RenderWorld.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\WorldBSP.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="RenderBlock.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\WorldData.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="CRBSection.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\WorldPoly.cpp">
+      <Filter>World</Filter>
     </ClCompile>
-    <ClCompile Include="DE_World.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="World\WorldTree.cpp">
+      <Filter>World</Filter>
     </ClCompile>
+    <ClCompile Include="World\WorldTreeNode.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Application.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Camera.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Context.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\DebugShader.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\DirectInput.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Frustum.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Mesh.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\OpenGLRenderer.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\ResourceLoader.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Shader.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\SystemUI.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Texture.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Timer.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Windows.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\imgui.cpp">
+      <Filter>ImGUi</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\imgui_draw.cpp">
+      <Filter>ImGUi</Filter>
+    </ClCompile>
+    <ClCompile Include="App\MapMesh.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\ImGuiShader.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Log.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\MapShader.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App\glfw3.dll">
+      <Filter>App</Filter>
+    </None>
+    <None Include="App\tinyxml2.dll">
+      <Filter>App</Filter>
+    </None>
   </ItemGroup>
 </Project>

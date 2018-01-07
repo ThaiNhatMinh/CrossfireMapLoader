@@ -1,0 +1,15 @@
+<Data>
+	<Model File="GameAssets\MODEL\NANO_ASSASSIN\M-MOTION_ASSASSIN.LTB" />
+	<Texture>
+		<Assassin_UP01 File="GameAssets\MODEL\NANO_ASSASSIN\M-MOTION_ASSASSIN.DTX" />
+		<Assassin_UP02 File="GameAssets\MODEL\NANO_ASSASSIN\M-MOTION_ASSASSIN.DTX" />
+		<Object01 File="GameAssets\MODEL\NANO_ASSASSIN\M-MOTION_ASSASSIN.DTX" />
+		
+	</Texture>
+	<Material>
+			<Ka r="1.0" g="1.0" b="1.0" />
+			<Kd r="1.0" g="1.0" b="1.0" />
+			<Ks r="1.0" g="1.0" b="1.0"  exp="128"/>
+	</Material>
+	
+</Data>

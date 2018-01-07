@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -30,14 +30,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -72,12 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\Code Collection\MapLoader\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Code Collection\MapLoader\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\Code Collection\MapLoader\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Code Collection\MapLoader\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,6 +93,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Code Collection\MapLoader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,6 +122,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Code Collection\MapLoader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,54 +149,104 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CLightTable.h" />
-    <ClInclude Include="CPreMainWorld.h" />
-    <ClInclude Include="CRBSection.h" />
-    <ClInclude Include="de_sprite.h" />
-    <ClInclude Include="DE_World.h" />
-    <ClInclude Include="lt.h" />
-    <ClInclude Include="ltlink.h" />
-    <ClInclude Include="LTPlane.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="RenderBlock.h" />
-    <ClInclude Include="RenderWorld.h" />
-    <ClInclude Include="SPolyVertex.h" />
-    <ClInclude Include="SpriteControl.h" />
+    <ClInclude Include="App\Application.h" />
+    <ClInclude Include="App\Camera.h" />
+    <ClInclude Include="App\Context.h" />
+    <ClInclude Include="App\DebugShader.h" />
+    <ClInclude Include="App\DirectInput.h" />
+    <ClInclude Include="App\Frustum.h" />
+    <ClInclude Include="App\ImGuiShader.h" />
+    <ClInclude Include="App\interface.h" />
+    <ClInclude Include="App\Log.h" />
+    <ClInclude Include="App\MapMesh.h" />
+    <ClInclude Include="App\MapShader.h" />
+    <ClInclude Include="App\Mesh.h" />
+    <ClInclude Include="App\ModelCache.h" />
+    <ClInclude Include="App\OpenGLRenderer.h" />
+    <ClInclude Include="App\ResourceLoader.h" />
+    <ClInclude Include="App\Shader.h" />
+    <ClInclude Include="App\SystemUI.h" />
+    <ClInclude Include="App\Texture.h" />
+    <ClInclude Include="App\Timer.h" />
+    <ClInclude Include="App\Windows.h" />
+    <ClInclude Include="include\imgui\imconfig.h" />
+    <ClInclude Include="include\imgui\imgui.h" />
+    <ClInclude Include="include\imgui\imgui_internal.h" />
+    <ClInclude Include="include\imgui\stb_rect_pack.h" />
+    <ClInclude Include="include\imgui\stb_textedit.h" />
+    <ClInclude Include="include\imgui\stb_truetype.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Surface.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Vertex.h" />
-    <ClInclude Include="WorldBSP.h" />
-    <ClInclude Include="WorldData.h" />
-    <ClInclude Include="WorldPoly.h" />
-    <ClInclude Include="WorldTree.h" />
-    <ClInclude Include="WorldTreeNode.h" />
+    <ClInclude Include="World\CLightTable.h" />
+    <ClInclude Include="World\CPreMainWorld.h" />
+    <ClInclude Include="World\CRBSection.h" />
+    <ClInclude Include="World\de_sprite.h" />
+    <ClInclude Include="World\DE_World.h" />
+    <ClInclude Include="World\lt.h" />
+    <ClInclude Include="World\ltlink.h" />
+    <ClInclude Include="World\LTPlane.h" />
+    <ClInclude Include="World\Node.h" />
+    <ClInclude Include="World\RenderBlock.h" />
+    <ClInclude Include="World\RenderWorld.h" />
+    <ClInclude Include="World\SPolyVertex.h" />
+    <ClInclude Include="World\SpriteControl.h" />
+    <ClInclude Include="World\Surface.h" />
+    <ClInclude Include="World\Vertex.h" />
+    <ClInclude Include="World\WorldBSP.h" />
+    <ClInclude Include="World\WorldData.h" />
+    <ClInclude Include="World\WorldPoly.h" />
+    <ClInclude Include="World\WorldTree.h" />
+    <ClInclude Include="World\WorldTreeNode.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CLightTable.cpp" />
-    <ClCompile Include="CPreMainWorld.cpp" />
-    <ClCompile Include="CRBSection.cpp" />
-    <ClCompile Include="DE_World.cpp" />
-    <ClCompile Include="ltlink.cpp" />
-    <ClCompile Include="LTPlane.cpp" />
+    <ClCompile Include="App\Application.cpp" />
+    <ClCompile Include="App\Camera.cpp" />
+    <ClCompile Include="App\Context.cpp" />
+    <ClCompile Include="App\DebugShader.cpp" />
+    <ClCompile Include="App\DirectInput.cpp" />
+    <ClCompile Include="App\Frustum.cpp" />
+    <ClCompile Include="App\ImGuiShader.cpp" />
+    <ClCompile Include="App\Log.cpp" />
+    <ClCompile Include="App\MapMesh.cpp" />
+    <ClCompile Include="App\MapShader.cpp" />
+    <ClCompile Include="App\Mesh.cpp" />
+    <ClCompile Include="App\OpenGLRenderer.cpp" />
+    <ClCompile Include="App\ResourceLoader.cpp" />
+    <ClCompile Include="App\Shader.cpp" />
+    <ClCompile Include="App\SystemUI.cpp" />
+    <ClCompile Include="App\Texture.cpp" />
+    <ClCompile Include="App\Timer.cpp" />
+    <ClCompile Include="App\Windows.cpp" />
+    <ClCompile Include="include\imgui\imgui.cpp" />
+    <ClCompile Include="include\imgui\imgui_draw.cpp" />
     <ClCompile Include="MapLoader.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="RenderBlock.cpp" />
-    <ClCompile Include="RenderWorld.cpp" />
-    <ClCompile Include="SPolyVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Surface.cpp" />
-    <ClCompile Include="Vertex.cpp" />
-    <ClCompile Include="WorldBSP.cpp" />
-    <ClCompile Include="WorldData.cpp" />
-    <ClCompile Include="WorldPoly.cpp" />
-    <ClCompile Include="WorldTree.cpp" />
-    <ClCompile Include="WorldTreeNode.cpp" />
+    <ClCompile Include="World\CLightTable.cpp" />
+    <ClCompile Include="World\CPreMainWorld.cpp" />
+    <ClCompile Include="World\CRBSection.cpp" />
+    <ClCompile Include="World\DE_World.cpp" />
+    <ClCompile Include="World\ltlink.cpp" />
+    <ClCompile Include="World\LTPlane.cpp" />
+    <ClCompile Include="World\Node.cpp" />
+    <ClCompile Include="World\RenderBlock.cpp" />
+    <ClCompile Include="World\RenderWorld.cpp" />
+    <ClCompile Include="World\SPolyVertex.cpp" />
+    <ClCompile Include="World\Surface.cpp" />
+    <ClCompile Include="World\Vertex.cpp" />
+    <ClCompile Include="World\WorldBSP.cpp" />
+    <ClCompile Include="World\WorldData.cpp" />
+    <ClCompile Include="World\WorldPoly.cpp" />
+    <ClCompile Include="World\WorldTree.cpp" />
+    <ClCompile Include="World\WorldTreeNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App\glfw3.dll" />
+    <None Include="App\tinyxml2.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

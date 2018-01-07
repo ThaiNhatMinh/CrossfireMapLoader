@@ -1,0 +1,6 @@
+<GameConfig>
+	<Graphic>
+		<ClearColor r="0.0" g="0.0" b="0.6" a="1.0" />
+	</Graphic>
+	<Window name="TR3" sizex="800" sizey="600" posx="-1" posy="-1" />
+</GameConfig>

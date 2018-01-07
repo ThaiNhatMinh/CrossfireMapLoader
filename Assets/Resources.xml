@@ -1,0 +1,11 @@
+<Resources Path ="Assets\">
+
+  <Shader Name="Debug" Tag="Debug" FileVS="SHADER\Debug.vs" FileFS="SHADER\Debug.fs" />
+  <Shader Name="ImGuiShader" Tag="ImGuiShader" FileVS="SHADER\imgui.vs" FileFS="SHADER\imgui.fs" />
+  <Shader Name="MapShader" Tag="MapShader" FileVS="SHADER\maps.vs" FileFS="SHADER\NoTexture.fs" />
+ 
+  
+  <Texture File="TEXTURES\Default.png" />
+ 
+  
+</Resources>

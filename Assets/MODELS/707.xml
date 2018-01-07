@@ -1,0 +1,13 @@
+<Data>
+	<Model File="MODELS\707\C707_BODY_BL.LTB" />
+	<Texture>
+		<Object02 File="MODELS\707\C707_BODY_BL.DTX" />
+		<C707_BL_Head File="MODELS\707\C707_FACE_BL.DTX" />
+	</Texture>
+	<Material>
+			<Ka r="1.0" g="1.0" b="1.0" />
+			<Kd r="1.0" g="1.0" b="1.0" />
+			<Ks r="1.0" g="1.0" b="1.0"  exp="128"/>
+	</Material>
+	
+</Data>

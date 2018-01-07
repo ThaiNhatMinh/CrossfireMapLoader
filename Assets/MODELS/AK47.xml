@@ -1,0 +1,16 @@
+<Data>
+	<Model File="MODEL\AK47\PV-AK47.LTB" />
+	<Texture>
+		<Fview-hand2 File="MODEL\AK47\FVIEW_HAND_NAVYSEAL_BL.DTX" />
+		<Fview-arm2 File="MODEL\AK47\FVIEW_ARM_NAVYSEAL_BL.DTX" />
+		<Box01 File="MODEL\AK47\PV-AK47.DTX" />
+		<reload2 File="MODEL\AK47\PV-AK47.DTX" />
+		<reload1 File="MODEL\AK47\PV-AK47.DTX" />
+	</Texture>
+	<Material>
+			<Ka r="1.0" g="1.0" b="1.0" />
+			<Kd r="1.0" g="1.0" b="1.0" />
+			<Ks r="1.0" g="1.0" b="1.0"  exp="128"/>
+	</Material>
+	
+</Data>
